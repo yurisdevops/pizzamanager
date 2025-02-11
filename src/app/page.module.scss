@@ -12,6 +12,15 @@
     color: var(--red-900);
     margin-left: -9.2px;
   }
+
+  @media (max-width: 620px) {
+    font-size: 40px;
+    gap: 8px;
+
+    span {
+      margin-left: -5px;
+    }
+  }
 }
 
 .containerCenter {
@@ -64,6 +73,9 @@
     font-size: 40px;
     font-weight: bold;
   }
+  @media (max-width: 620px) {
+    width: 90%;
+  }
 }
 
 .input {
@@ -92,10 +104,8 @@
       color: var(--red-900);
     }
   }
-}
 
-@media (max-width: 620px) {
-  .login {
-    width: 90%;
+  @media (max-width: 620px) {
+    font-size: 16px;
   }
 }
