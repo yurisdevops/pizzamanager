@@ -1,7 +1,33 @@
 import Link from "next/link";
 import styles from "@/app/page.module.scss";
+import { api } from "../../services/api";
+import { redirect } from "next/navigation";
 
 export default function Signup() {
+  const handleRegister = async (formData: FormData) => {
+    "use server";
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    if (!name || !email || !password) {
+      return;
+    }
+
+    try {
+      await api.post("/users", {
+        name,
+        email,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+
+    redirect("/");
+  };
+
   return (
     <>
       <div className={styles.containerCenter}>
@@ -13,7 +39,7 @@ export default function Signup() {
 
         <section className={styles.login}>
           <h1>Crie sua conta</h1>
-          <form>
+          <form action={handleRegister}>
             <input
               type="text"
               required
