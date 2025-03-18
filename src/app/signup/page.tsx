@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "@/app/page.module.scss";
 import { api } from "../../services/api";
 import { redirect } from "next/navigation";
+import { toast } from "sonner";
 
 export default function Signup() {
   const handleRegister = async (formData: FormData) => {

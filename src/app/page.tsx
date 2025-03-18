@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import { api } from "@/services/api";
@@ -25,8 +24,6 @@ export default function Home() {
       if (!response.data.token) {
         return;
       }
-
-      console.log(response.data.token);
 
       const expressTime = (60 * 60 * 24 * 30) & 1000;
 

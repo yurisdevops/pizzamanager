@@ -1,10 +1,14 @@
-import styles from "./styles.module.scss";
+import { Form } from "./components/form";
+import { api } from "@/services/api";
+import { getCookieServer } from "@/lib/cookieServer";
+export default async function Product() {
+  const token = await getCookieServer();
 
-export default function Product() {
-  return (
-    <main className={styles.container}>
-      
-      <h1>Produtos</h1>
-    </main>
-  );
+  const response = await api.get("/categories", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return <Form categories={response.data} />;
 }
