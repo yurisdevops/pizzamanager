@@ -8,15 +8,18 @@ import { selectOrderById } from "@/providers/features/order/orderSelectors";
 import { RootState } from "@/providers/app/store";
 
 export function ModalOrder() {
-  const isOpen = useSelector((state: RootState) => state.order.isOpen);
   const order = useSelector(selectOrderById);
+  const orderId = useSelector((state: RootState) => state.order.order_id);
+  const orders = useSelector((state: RootState) => state.order.orders);
   const dispatch = useDispatch();
-
-  console.log("Modal está aberto:", isOpen); // Verifica se o modal deve estar aberto
-  console.log("Pedido correspondente:", order);
 
   function handleCloseDetailOrder() {
     dispatch(onRequestClose());
+  }
+  const filteredOrders = orders.filter((item) => item.order_id === orderId);
+
+  if (!orderId || filteredOrders.length === 0) {
+    return null;
   }
 
   if (!order) {
@@ -34,14 +37,16 @@ export function ModalOrder() {
           <span className={styles.table}>
             Mesa <b>{order.order.table}</b>
           </span>
-          <section className={styles.item}>
-            <span>
-              1 - <b>{order.product.name}</b>
-            </span>
-            <span className={styles.description}>
-              {order.product.description}
-            </span>
-          </section>
+          {filteredOrders.map((item) => (
+            <section className={styles.item}>
+              <span>
+                1 - <b>{item.product.name}</b>
+              </span>
+              <span className={styles.description}>
+                {item.product.description}
+              </span>
+            </section>
+          ))}
           <button className={styles.buttonOrder}>Concluir pedido</button>
         </article>
       </section>
