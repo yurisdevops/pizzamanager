@@ -138,7 +138,7 @@ expo start
 
 ---
 
-## 🗂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ### Backend (Express + Prisma)
 
