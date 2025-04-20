@@ -1,36 +1,43 @@
 "use client";
 
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/providers/hooks/useAppDispatch";
-import {
-  onRequestOpen,
-  fetchOrderItems,
-} from "@/providers/features/order/orderSlice";
-import { RefreshCw } from "lucide-react";
+import { useContext, useEffect } from "react";
 import styles from "./styles.module.scss";
+import { RefreshCw } from "lucide-react";
 import { OrderProps } from "@/lib/order.type";
+
+import { OrderContext } from "@/providers/order";
 import { ModalOrder } from "../modal";
-import { RootState } from "@/providers/app/store";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface Props {
   orders: OrderProps[];
 }
 
 export function Orders({ orders }: Props) {
-  const isOpen = useSelector((state: RootState) => state.order.isOpen);
-  const dispatch = useAppDispatch();
+  const { isOpen, onRequestOpen } = useContext(OrderContext);
+  const router = useRouter();
 
-  function handleDetailOrder(order_id: string) {
-    dispatch(fetchOrderItems(order_id));
-    dispatch(onRequestOpen(order_id));
+  async function handleDetailOrder(order_id: string) {
+    await onRequestOpen(order_id);
   }
+
+  function handleRefresh() {
+    router.refresh();
+    toast.success("Pedidos atualizados com sucesso!");
+  }
+
+  useEffect(() => {
+    console.log("O estado de isOpen mudou:", isOpen);
+    // Aqui você pode adicionar qualquer lógica que dependa de isOpen.
+  }, [isOpen]);
 
   return (
     <>
       <main className={styles.container}>
         <section className={styles.containerHeader}>
           <h1>Últimos pedidos</h1>
-          <button>
+          <button onClick={handleRefresh}>
             <RefreshCw size={24} color="#3fffa3" />
           </button>
         </section>

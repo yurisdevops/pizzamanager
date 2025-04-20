@@ -1,13 +1,11 @@
-import { ReduxProvider } from "@/providers/ReduxProvider";
 import { Header } from "./components/header";
+import { OrderProvider } from "@/providers/order";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <ReduxProvider>
-        <main>{children}</main>
-      </ReduxProvider>
+      <OrderProvider>{children}</OrderProvider>
     </>
   );
 }
