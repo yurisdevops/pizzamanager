@@ -2,7 +2,7 @@
 
 > Plataforma web completa para gerenciamento de pizzaria — pedidos, produtos, categorias e usuários.
 
-O **PizzaManager** é uma aplicação moderna composta por um back-end robusto em **Node.js** com **Express** e **Prisma**, e um front-end eficiente em **Next.js 15**, que juntos permitem o controle total de uma pizzaria, desde o cadastro de produtos até a finalização de pedidos. Ideal para quem deseja digitalizar e automatizar a rotina de atendimento de uma pizzaria.
+O **PizzaManager** é uma aplicação moderna composta por um back-end robusto em **Node.js** com **Express** e **Prisma**, um front-end eficiente em **Next.js 15**, e uma aplicação mobile desenvolvida com **React Native**. Juntas, essas tecnologias permitem o controle total de uma pizzaria, desde o cadastro de produtos até a finalização de pedidos. Ideal para quem deseja digitalizar e automatizar a rotina de atendimento de uma pizzaria.
 
 🔗 [Acesse o projeto](https://pizzamanager.vercel.app/)
 
@@ -39,6 +39,13 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 - Ícones modernos com **Lucide React**
 - Integração com cookies para controle de sessão
 
+### Mobile
+
+- Aplicação mobile desenvolvida com **React Native**
+- Navegação com **React Navigation** (Stack + Native)
+- Persistência de sessão com **Async Storage**
+- Consumo da API via **Axios**
+
 ---
 
 ## 🧪 Tecnologias Utilizadas
@@ -65,6 +72,14 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 - **Sonner** (notificações)
 - **Lucide-react** (ícones)
 
+### 📱 Mobile
+
+- **React Native 0.76**
+- **Expo**
+- **React Navigation** (Stack + Native)
+- **Axios**
+- **Async Storage** (persistência de sessão)
+
 ---
 
 ## 🚀 Como Rodar o Projeto
@@ -88,7 +103,6 @@ Crie o arquivo `.env` com base no exemplo:
 
 ```env
 NEXT_PUBLIC_API="sua_string_do_postgres_no_neon.tech"
-
 ```
 
 Rode as migrations e suba o servidor:
@@ -97,6 +111,8 @@ Rode as migrations e suba o servidor:
 npx prisma migrate deploy
 npm run dev
 ```
+
+🔗 [Repositório do Backend](https://github.com/yurisdevops/pizzamanager-backend)
 
 ---
 
@@ -107,6 +123,18 @@ cd pizzamanager/frontend
 npm install
 npm run dev
 ```
+
+---
+
+### 4. Mobile
+
+```bash
+cd pizzamanager/mobile
+npm install
+expo start
+```
+
+🔗 [Repositório do Mobile](https://github.com/yurisdevops/pizzamanager-mobile)
 
 ---
 
@@ -146,6 +174,17 @@ src/
 └── middleware.ts
 ```
 
+### Mobile (React Native)
+
+```
+src/
+├── components/
+├── navigation/
+├── screens/
+├── services/
+└── App.tsx
+```
+
 ---
 
 ## 📬 Contato
@@ -156,3 +195,4 @@ Desenvolvido por [Yuri Souza](https://github.com/yurisdevops)
 ---
 
 ### 🍕 Gerencie sua pizzaria com mais agilidade e organização com o **PizzaManager**!
+
