@@ -8,7 +8,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 
 ---
 
-## 🧭 Índice
+## Índice
 
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
@@ -18,7 +18,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 
 ---
 
-## ⚙️ Funcionalidades
+##  Funcionalidades
 
 ### Backend
 
@@ -48,7 +48,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 
 ---
 
-## 🧪 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### 🛠 Backend
 
@@ -61,7 +61,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 - **Cloudinary** (upload opcional)
 - **PostgreSQL** via **Neon.tech**
 
-### 🎨 Frontend
+### Frontend
 
 - **Next.js 15 (App Router)**
 - **React 19**
@@ -72,7 +72,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 - **Sonner** (notificações)
 - **Lucide-react** (ícones)
 
-### 📱 Mobile
+### Mobile
 
 - **React Native 0.76**
 - **Expo**
@@ -82,7 +82,7 @@ O **PizzaManager** é uma aplicação moderna composta por um back-end robusto e
 
 ---
 
-## 🚀 Como Rodar o Projeto
+## Como Rodar o Projeto
 
 ### 1. Clonar o repositório
 
@@ -134,7 +134,7 @@ npm install
 expo start
 ```
 
-🔗 [Repositório do Mobile](https://github.com/yurisdevops/pizzamanager-mobile)
+ [Repositório do Mobile](https://github.com/yurisdevops/pizzamanager-mobile)
 
 ---
 
@@ -187,7 +187,7 @@ src/
 
 ---
 
-## 📬 Contato
+## Contato
 
 Desenvolvido por [Yuri Souza](https://github.com/yurisdevops)  
 📧 yurimachado.dev@gmail.com
